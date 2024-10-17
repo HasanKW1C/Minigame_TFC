@@ -48,14 +48,12 @@ def drop_stars(star_list):
         y_pos = 0
         star_list.append([x_pos, y_pos])
 
-def update_star_positions(star_list, score):
+def update_star_positions(star_list):
     for idx, star_pos in enumerate(star_list):
         if star_pos[1] >= 0 and star_pos[1] < HEIGHT:
             star_pos[1] += speed
         else:
-            star_list.pop(idx)
-            score += 1
-    return score
+            star_list.pop(idx)  # Remove star without adding points
 
 def detect_collision(player_pos, star_pos):
     p_x = player_pos[0]
@@ -90,13 +88,13 @@ while not game_over:
     screen.fill(BLACK)
 
     drop_stars(star_list)
-    score = update_star_positions(star_list, score)
+    update_star_positions(star_list)
 
     for star_pos in star_list:
         pygame.draw.rect(screen, star_color, (star_pos[0], star_pos[1], star_size, star_size))
         if detect_collision(player_pos, star_pos):
             star_list.remove(star_pos)
-            score += 1
+            score += 1  # Add points only when a collision happens
 
     pygame.draw.rect(screen, player_color, (player_pos[0], player_pos[1], player_size, player_size))
 
