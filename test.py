@@ -33,7 +33,7 @@ colors = [(RED, 'Red'), (GREEN, 'Green'), (BLUE, 'Blue'), (YELLOW, 'Yellow')]
 
 # Game variables
 clock = pygame.time.Clock()
-speed = 7
+speed = 5
 game_duration = 60  # 1 minute
 start_time = time.time()
 
