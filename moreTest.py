@@ -24,7 +24,7 @@ font = pygame.font.Font(None, 36)
 
 # Load player character image
 player_image = pygame.image.load('characterIdle.png')
-player_size = 50
+player_size = 100
 player_image = pygame.transform.scale(player_image, (player_size, player_size))
 
 # Create a horizontally flipped version of the player image

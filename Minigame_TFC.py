@@ -21,7 +21,7 @@ YELLOW = (255, 255, 0)
 # Set up font
 font = pygame.font.Font(None, 36)
 
-# Set up player
+# Set up player3
 player_size = 50
 player_color = BLUE
 player_pos = [WIDTH // 2, HEIGHT - player_size - 10]
